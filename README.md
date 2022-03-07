@@ -3,7 +3,7 @@
 Take Home Project @ [Qwasar Silicon Valley](https://qwasar.io)
 
 ***
-## Partecipants
+## Participants
 * [Morgan ANDERS](https://github.com/thatMAkid)
 * [Ethan SCULLY](https://github.com/ScullyE)
 * [Thomas STAMPFL](https://github.com/thomasstampfl)
