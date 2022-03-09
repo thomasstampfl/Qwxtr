@@ -1,3 +1,4 @@
+/*
 function addStr(str, index, stringToAdd){
     return str.substring(0, index) + stringToAdd + str.substring(index, str.length);
     }
@@ -13,3 +14,4 @@ function addStr(str, index, stringToAdd){
     console.log(addStr(str, cursorPosition, stringToAdd)); //outPut : "This is a modified string"
 
 export default addStr;
+*/
