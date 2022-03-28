@@ -1,45 +1,66 @@
 import React, { useState, useEffect } from "react"
 import { KEY_BACKSPACE } from './keyTypes'
-// import {addStr} from './substring'
+import { addStr } from './substring'
 
 const App = () => {
 
-    const [cursor, setCursor] = useState('')
+    const [cursor_index, setCursor] = useState(0)
+    const [cursor_string, setCString] = useState('')
+
+    const [input_key, setInputKey] = useState('')
     const [str, setStr] = useState('')
+
     const [command, setCommand] = useState('')
 
     useEffect(() => {
-        console.log("STR: " + str)
+        console.log("count: " + String(str.length))
+        setCommand("Char count: " + String(str.length))
     }, [str])
 
-    const keyHandler = (key) => {
-        if (key.length > 1) {
-            switch (key) {
-                case KEY_BACKSPACE:
-                    setCommand('deleting now...')
-                    setStr((prev) => (prev.slice(0, -1)))
-                    setCursor((prev) => (prev - 1))
-                    // setCursor(str.length)
-                    break;
-                case 'ArrowLeft':
-                    setCommand('move cursor left...')
-                    break;
-                case 'ArrowRight':
-                    setCommand('move cursor right...')
-                    break;
-                case 'Meta':
-                    setCommand('meta shift')
-                    break;
-                default:
-                    setCommand('no command')
-                    break;
-            }
-        } else {
-            setStr((prev) => (prev + key))
-            setCursor((prev) => (prev + 1))
-            setCommand('')
+    useEffect(() => {
+        if (cursor_index > str.length) {
+            setCursor(str.length);
         }
+        setCommand("Cursor idx: " + String(cursor_index));
+        setCString(str.substring(0, cursor_index));
+    }, [cursor_index])
 
+    useEffect(() => {
+        if (input_key != '') {
+            if (input_key.length > 1) {
+                if (input_key == KEY_BACKSPACE) {
+                    setStr((prev) => (prev.slice(0, cursor_index) + prev.slice(cursor_index + 1)));
+                }
+            } else if (input_key.length > 0) {
+                setStr((prev) => (prev.slice(0, cursor_index) + input_key + prev.slice(cursor_index)));
+                setCursor((prev) => (prev + 1));
+            }
+            console.log("inputkey triggered");
+            setInputKey('');
+        }
+    }, [input_key])
+
+    const keyHandler = (key) => {
+        switch (key) {
+            case KEY_BACKSPACE:
+                setCursor((prev) => ((prev > 0) ? prev - 1 : 0));
+                setCommand('deleting now...');
+                setInputKey(key);
+                break;
+            case 'ArrowLeft':
+                setCursor((prev) => ((prev > 0) ? prev - 1 : 0));
+                break;
+            case 'ArrowRight':
+                setCursor((prev) => (prev + 1))
+                break;
+            case 'Meta':
+                setCommand('meta shift')
+                break;
+            default:
+                setCommand('no command')
+                setInputKey(key);
+                break;
+        }
     }
 
     useEffect(() => {
@@ -51,15 +72,6 @@ const App = () => {
 
 
     return (
-        // <div >
-        //     <h1>Header</h1>
-        //     <p>{command}</p>
-        //     <div className='content'>
-        //         {str}
-        //     </div>
-        // </div>
-
-
         <div >
             <h1>QWXTR</h1>
             <div className='content'>
@@ -97,4 +109,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default App
