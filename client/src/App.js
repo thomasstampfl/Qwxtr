@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import {KEY_BACKSPACE} from './keyTypes'
-import {addStr} from './substring'
+import { KEY_BACKSPACE } from './keyTypes'
+// import {addStr} from './substring'
 
 const App = () => {
 
@@ -13,7 +13,7 @@ const App = () => {
     }, [str])
 
     const keyHandler = (key) => {
-        if(key.length > 1){
+        if (key.length > 1) {
             switch (key) {
                 case KEY_BACKSPACE:
                     setCommand('deleting now...')
@@ -39,7 +39,7 @@ const App = () => {
             setCursor((prev) => (prev + 1))
             setCommand('')
         }
-        
+
     }
 
     useEffect(() => {
@@ -51,14 +51,50 @@ const App = () => {
 
 
     return (
+        // <div >
+        //     <h1>Header</h1>
+        //     <p>{command}</p>
+        //     <div className='content'>
+        //         {str}
+        //     </div>
+        // </div>
+
+
         <div >
-            <h1>Header</h1>
-            <p>{command}</p>
+            <h1>QWXTR</h1>
             <div className='content'>
-                {str}
+                <div className="row">
+                    <div className="note-title">note title</div>
+                </div>
+                <div className="row">
+                    <div className="side-nav">
+                        <div className="note-list">
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                            <li>First</li>
+                            <li>Second</li>
+                            <li>Third</li>
+                        </div>
+
+                    </div>
+                    <div className="note-content">{str}</div>
+                </div>
+
+                <p>{command}</p>
             </div>
+
         </div>
     )
 }
 
-export default App
+export default App;

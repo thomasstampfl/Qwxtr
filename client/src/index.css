@@ -1,12 +1,64 @@
+/* Deep Koamaru (#342A69, RGB: (52, 42, 105)), Amaranth Deep Purple (#972378, RGB: (151, 35, 120)), Razzmatazz (#EF2E72, RGB: (239, 46, 114)), Flavescent (#FADF8B, RGB: (250, 223, 139)) and Mango Tango (#FF8148, RGB: (255, 129, 72)). */
+:root{
+    display: flex;
+    background-color: #D0DAE8;
+    background-size: cover;
+    font-family: 'Poppins', Helvetica ,'Roboto',Arial;
+    align-items: center;
+    justify-content: center;
+    color: #ff8148;
+}
 .content {
-    min-height: 100px;
-    max-width: 500px;
+    display: 'flex';
+    align-items: center;
+    min-height: 75vh;
+    width: 85vw;
+    font-family: 'Poppins', Helvetica ,'Roboto',Arial;
     overflow-wrap: break-word;
-    color: blue;
-    border: 5px solid #636363;
+    color: #342C51;
+    background-color: #F5F9FF;
+    border-top: 3px solid #5F7287;
+    box-shadow: 0 1px 6px rgba(0,0,0, .35);
     vertical-align: top;
     text-align: left;
     justify-content: center;
     word-wrap: break-word;
     cursor:text;
+    margin-bottom: 12.5vh;
 }
+.note-title{
+    text-align: center;
+    background-color: #E9EDF2;
+    border-right: 1px solid #5F7287;
+    border-left: 1px solid #5F7287;
+}
+.note-list{
+    display: flex;
+    flex: 0 0 18%;
+    flex-direction: column;
+    float: left;
+    padding-right: 2.5em;
+    padding-left: 2.5em;
+    border-right: 1px solid #5F7287;
+    border-left: 1px solid #5F7287;
+    list-style: none;
+    height: 72vh;
+    background-color: #E9EDF2;
+    overflow:hidden; 
+    overflow-y:scroll;
+    
+}
+.note-content{
+    border: 1px solid #5F7287;
+    min-height: 72vh;
+}
+.editor-body{
+    display: inline-block;
+}
+
+h1, p{
+    text-align: center;
+}
+li{
+    margin: 30px 0;
+  }
