@@ -44,11 +44,11 @@ const App = () => {
         switch (key) {
             case KEY_BACKSPACE:
                 setCursor((prev) => ((prev > 0) ? prev - 1 : 0));
-                setCommand('deleting now...')
+                setCommand('deleting now...');
                 setInputKey(key);
                 break;
             case 'ArrowLeft':
-                setCursor((prev) => ((prev > 0) ? prev - 1 : 0))
+                setCursor((prev) => ((prev > 0) ? prev - 1 : 0));
                 break;
             case 'ArrowRight':
                 setCursor((prev) => (prev + 1))
