@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { KEY_BACKSPACE } from './keyTypes'
-import { addStr } from './substring'
 
 const App = () => {
 
