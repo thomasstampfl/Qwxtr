@@ -63,12 +63,8 @@ li{
     margin: 30px 0;
 }
 
-.scully-content {
-    min-height: 100px;
-    max-width: 500px;
+.text_field {
     overflow-wrap: break-word;
-    color: blue;
-    border: 5px solid #636363;
     vertical-align: top;
     text-align: left;
     justify-content: center;

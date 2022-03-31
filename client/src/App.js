@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react"
 import { KEY_BACKSPACE } from './keyTypes'
+import TextField from './Components/text_field'
 
 const App = () => {
 
+
+    return(
+        <div className="note-content"><TextField /></div>
+    );
+    /*
     const [cursor_index, setCursor] = useState(0)
     const [cursor_string, setCString] = useState('')
 
-    const [input_key, setInputKey] = useState('')
-    const [str, setStr] = useState('')
+    
+    
 
     const [command, setCommand] = useState('')
 
@@ -24,22 +30,8 @@ const App = () => {
         setCString(str.substring(0, cursor_index));
     }, [cursor_index])
 
-    useEffect(() => {
-        if (input_key != '') {
-            if (input_key.length > 1) {
-                if (input_key == KEY_BACKSPACE) {
-                    setStr((prev) => (prev.slice(0, cursor_index) + prev.slice(cursor_index + 1)));
-                }
-            } else if (input_key.length > 0) {
-                setStr((prev) => (prev.slice(0, cursor_index) + input_key + prev.slice(cursor_index)));
-                setCursor((prev) => (prev + 1));
-            }
-            console.log("inputkey triggered");
-            setInputKey('');
-        }
-    }, [input_key])
-
-    const keyHandler = (key) => {
+    
+        const keyHandler = (key) => {
         switch (key) {
             case KEY_BACKSPACE:
                 setCursor((prev) => ((prev > 0) ? prev - 1 : 0));
@@ -61,6 +53,7 @@ const App = () => {
                 break;
         }
     }
+    
 
     useEffect(() => {
         document.addEventListener('keydown', (event) => {
@@ -98,7 +91,7 @@ const App = () => {
                         </div>
 
                     </div>
-                    <div className="note-content">{str}</div>
+                    <div className="note-content"><textField /></div>
                 </div>
 
                 <p>{command}</p>
@@ -106,6 +99,7 @@ const App = () => {
 
         </div>
     )
+    */
 }
 
 export default App
